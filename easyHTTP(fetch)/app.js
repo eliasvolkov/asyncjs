@@ -32,6 +32,19 @@ class easyHTTP {
         .then(data => data)
         .catch(err => err);
     }
+
+    put(url, data){
+        return fetch(url,{
+            method: 'UPDATE',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => data)
+        .catch(err => err);
+    }
 }
 
 
