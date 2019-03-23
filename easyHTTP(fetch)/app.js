@@ -45,6 +45,19 @@ class easyHTTP {
         .then(data => data)
         .catch(err => err);
     }
+
+    delete(url){
+        return fetch(url,{
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => 'resourse deleted')
+        .catch(err => err);
+    }
 }
 
 
