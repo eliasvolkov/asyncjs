@@ -19,6 +19,19 @@ class easyHTTP {
             .then(data => data)
             .catch(err => err);
     }
+
+    post(url, data){
+        return fetch(url,{
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => data)
+        .catch(err => err);
+    }
 }
 
 
